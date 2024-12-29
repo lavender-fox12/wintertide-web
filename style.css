@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #444;
+    background: #fefefe;
+    overflow-x: hidden;
+}
+
+/* Aurora Borealis yayy */
+.parallax {
+    height: 400px;
+    background: linear-gradient(120deg, #c3e9f7, #d7bde2, #fad6a5, #b6e5cf);
+    background-size: 300% 300%;
+    animation: aurora 10s infinite alternate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax h1 {
+    font-size: 3em;
+    margin: 0.5em 0;
+}
+
+.parallax p {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* Aurora Animation */
+@keyframes aurora {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Kind of Stars */
+.parallax::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(2px 2px at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%);
+    background-size: 10px 10px;
+    opacity: 0.6;
+    animation: flicker 3s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.4; }
+    100% { opacity: 0.8; }
+}
+
+/* more content */
+.content {
+    padding: 40px;
+    background: linear-gradient(to bottom, #e8f0f7, #fafafa);
+    color: #333;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 2.5em;
+    color: #6c757d;
+}
+
+.content p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Slideshow pics */
+.slideshow-container {
+    max-width: 70%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slideshow {
+    display: flex;
+    width: 500%;
+    animation: slide 15s infinite;
+}
+
+.slideshow img {
+    width: 20%;
+    border-radius: 10px;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    20% { transform: translateX(-20%); }
+    40% { transform: translateX(-40%); }
+    60% { transform: translateX(-60%); }
+    80% { transform: translateX(-80%); }
+    100% { transform: translateX(0%); }
+}
+
+/* Candles */
+.wrapper {
+    position: relative;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.floor {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: #673C63;
+    bottom: 0;
+}
+
+.candles {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.candle1, .candle2 {
+    width: 35px;
+    height: 100px;
+    background: #fff;
+    border: 3px solid #673C63;
+    border-bottom: 0;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.candle1__stick, .candle2__stick {
+    width: 5px;
+    height: 15px;
+    background: #673C63;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+.candle1__flame, .candle2__flame {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 15px;
+    height: 20px;
+    background: radial-gradient(circle, #f9d423, #fc913a, #ff4e50);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: flicker 1s infinite alternate;
+}
+
+/* Cute Faces */
+.candle1__face, .candle2__face {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #333;
+}
+
+.candle1__eyes, .candle2__eyes {
+    display: block;
+    text-align: center;
+    font-size: 8px;
+    margin-bottom: 5px;
+}
+
+.candle1__mouth, .candle2__mouth {
+    display: block;
+    text-align: center;
+    font-size: 6px;
+}
+
+.candle1__eyes::before, .candle2__eyes::before {
+    content: "●";
+    margin-right: 5px;
+}
+
+.candle1__eyes::after, .candle2__eyes::after {
+    content: "●";
+    margin-left: 5px;
+}
+
+.candle1__mouth::before, .candle2__mouth::before {
+    content: "°";
+}
+
+
+footer {
+    text-align: center;
+    background: #fafafa;
+    color: #888;
+    padding: 20px;
+    font-size: 0.9em;
+    border-top: 1px solid #eaeaea;
+}
